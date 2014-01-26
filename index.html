@@ -1,0 +1,16 @@
+---
+layout: default
+title: Nicholas Kariniemi
+---
+
+<div id="home">
+  <h2 class="title">Blog Posts</h2>
+  <ul class="posts">
+    {% for post in site.posts %}
+      <li>
+				<div class="post-date">{{ post.date | date_to_string }}</div>
+				<a class="post-title" href="{{ post.url }}">{{ post.title }}</a>
+			</li>
+    {% endfor %}
+  </ul>
+</div>
