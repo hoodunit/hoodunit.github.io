@@ -118,8 +118,10 @@ a:visited { color: #a0a; }
 
 .footer {
   border-top: 1px solid #E2E2E2;
-  margin-top: 2em;
+  margin-top: 1em;
+  padding-top: 0.5em;
   overflow: hidden;
+  text-align: center;
 }
 
 .footer .contact {
@@ -132,21 +134,21 @@ a:visited { color: #a0a; }
 }
 
 .footer .rss {
-  margin-top: 1.1em;
-  margin-right: -.2em;
-  float: right;
+  display: inline;
 }
 
 .footer .rss img {
   border: 0;
 }
 
+.footer .copyright {
+  font-size: 14px;
+  display: inline;
+}
+
 .title {
-   /* text-align: center;  */
-   /* font-size: 200%; */
- -top: 0.5em;
-   margin-bottom: 0.5em;
-   /* font-weight: bold; */
+  -top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 /*****************************************************************************/
