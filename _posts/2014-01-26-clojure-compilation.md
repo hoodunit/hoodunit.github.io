@@ -45,7 +45,7 @@ So how does the JVM load and execute this code? The JVM *loads*, *links*, and *i
 
 Classes are initialized only when needed. A class is initialized at JVM startup if it is the main specified class. Classes are also initialized when they are referenced using JVM instructions like `new` or static method invocations, or when a sub-class is initialized. When a class needs to be initialized, it must first be loaded and linked, though these steps may occur at other times.
 
-#### Java Compilation Hello World
+### Java Compilation Hello World
 
 That's all nice, but what does it mean? What does this look like in practice? Suppose we have the following Hello World example in the Java file Hello.java:
 
@@ -125,7 +125,7 @@ public static void main(java.lang.String[]);
 
 The JVM uses a stack to hold operands for instructions. In this example to print "Hello world" we fetch the the static field [java.lang.System.out](http://docs.oracle.com/javase/7/docs/api/java/lang/System.html#out), which returns an object of type PrintStream, and push its value to the stack. Then we push our constant string "Hello world" to the stack. Finally we call invokevirtual with constant "println" to execute [PrintStream.println](http://docs.oracle.com/javase/7/docs/api/java/io/PrintStream.html#println%28java.lang.String%29) and print our message.
 
-#### Java Compilation Summary
+### Java Compilation Summary
 
 The JVM loads and executes class files. For Java each class file is a straightforward representation of a Java class. The JVM loads, links, and initializes these classes at run time when needed. The execution itself usually uses a form of just-in-time (JIT) compilation, where Java bytecode is binary translated to machine code just before it is needed.
 
@@ -158,7 +158,7 @@ core$_main.class
 
 This created not one class file, not two, but four class files. What is going on here? Where did all of that code come from?
 
-#### Clojure Source Code
+### AOT: Clojure Source Code
 
 The first place to look is back at the Clojure source code.
 
@@ -262,7 +262,7 @@ What are all of those quotes and @ symbols? That doesn't look very Lispy. Oh yea
 
 It doesn't look so simple anymore, does it?
 
-#### Generated files
+### Generated files
 
 If we closely compare the fully expanded Clojure code and the generated files we notice a few things. Three of the generated class files correspond to functions. One is for the -main function and the other two are for the anonymous functions within the namespace macro. The final class is a loader class for the core namespace (or hello/core.clj file, as each namespace corresponds to a file).
 
@@ -293,7 +293,7 @@ Clojure has first-class functions, which can be passed around like any other var
 
 We'll take a look at each of these files in turn.
 
-#### core__init: Loader class for core namespace
+### core__init: Loader class for core namespace
 
 According to [Clojure.org documentation](http://clojure.org/compilation), for each namespace a loader class with an __init suffix is created. This is the loader class for the hello.core namespace.
 
@@ -429,7 +429,7 @@ Finally, the load method performs the actual code of the ns function i.e. it doe
 
 Remember that our two anonymous functions have been deferred to separate files.
 
-#### core$_main: main function
+### core$_main: main function
 
 ```java
 package hello;
@@ -567,7 +567,7 @@ We notice two key differences when comparing this to the compiled Java Hello Wor
 * Clojure uses an extra level of indirection for calling the print function. Java fetches `java.lang.System.out` and calls `invokevirtual` to print. Clojure loads the var pointing to the function, calls `invokevirtual` to get the function value, casts it to a function, and calls `invokeinterface` to print.
 * Clojure does more setup work. Java just loads `java.lang.System.out` directly. Clojure sets up a var with its root binding pointing to the `clojure.core/println` function beforehand in the static initializer.
 
-#### core$loading\_\_4910\_\_auto\_\_: `with-loading-context` anonymous function
+### core$loading\_\_4910\_\_auto\_\_: with-loading-context anonymous function
 
 ```java
 // core$loading__4910__auto__.class
@@ -619,7 +619,7 @@ This class corresponds to the expansion of `with-loading-context` from the `ns` 
 
 The compiled code seems to be a straightforward interpretation of the original code. Clojure uses a custom class loader (defined in [DynamicClassLoader](https://github.com/clojure/clojure/blob/master/src/jvm/clojure/lang/DynamicClassLoader.java)) instead of the default JVM bootstrap loader. According to the [JVM specification](http://docs.oracle.com/javase/specs/jvms/se7/html/jvms-5.html#jvms-5.3), "applications employ user-defined class loaders in order to extend the manner in which the Java Virtual Machine dynamically loads and thereby creates classes." For dynamic compilation it is clear that a custom class loader is necessary. Offhand it seems like AOT compilation could use the default bootstrap loader, but there may be good reasons for using a custom class loader that I'm not familiar with.
 
-#### core$fn\_\_16: `dosync` anonymous function
+### core$fn\_\_16: dosync anonymous function
 
 ```java
 // core$fn__16.class
