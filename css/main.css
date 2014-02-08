@@ -122,6 +122,8 @@ a:visited { color: #a0a; }
   padding-top: 0.5em;
   overflow: hidden;
   text-align: center;
+  font-size: 14px;
+  line-height: 150%;
 }
 
 .footer .contact {
@@ -142,7 +144,6 @@ a:visited { color: #a0a; }
 }
 
 .footer .copyright {
-  font-size: 14px;
   display: inline;
 }
 
