@@ -64,6 +64,6 @@ The situation is worse on Android. The scale of the problem is roughly the same,
 <img class="blog-img" style="min-width: 300px; width: 100%; max-width: 500px;" src="/img/dalvik_vs_clojure.svg"></img>
 <div class="blog-img-label">Dalvik Versus Clojure</div>
 
-This compares a Java Hello World app from the Android tutorials and a Clojure version) using a release compilation of lein-droid on my Nexus 4. The point is not to get exact measurements, but to show the scale of the problem.
+This compares a Java Hello World app from the Android tutorials and a Clojure version using a release compilation of lein-droid on my Nexus 4. The point is not to get exact measurements, but to show the scale of the problem.
 
 Conclusion: JVM startup time is not a problem. **Clojure startup time** is. But why? That's for another post.
