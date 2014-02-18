@@ -67,3 +67,6 @@ The situation is worse on Android. The scale of the problem is roughly the same,
 This compares a Java Hello World app from the Android tutorials and a Clojure version using a release compilation of lein-droid on my Nexus 4. The point is not to get exact measurements, but to show the scale of the problem.
 
 Conclusion: JVM startup time is not a problem. **Clojure startup time** is. But why? That's for another post.
+
+-----
+Update 2014-2-18: I did some more testing and I was able to get Clojure on Android start times down to about 1.7 seconds by removing the lein-droid default splash screen and neko code (and using a Nexus 5 phone). This is about 6.8x slower than the standard Android Hello World startup. See the [original benchmark](https://github.com/nicholaskariniemi/thesis/tree/master/experiments/clojure_android_hello_world) and the [updated benchmark](https://github.com/nicholaskariniemi/thesis/tree/master/experiments/clojure_android_profiling).
