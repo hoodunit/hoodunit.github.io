@@ -328,7 +328,7 @@ There's also another line like this:
 (require '[clojure.java.io :as jio]) ;; 8%
 ```
 
-I have marked the individual times only for desktop profiling as Android profiling data was difficult to parse. These lines load a number of functions that are defined in other classes such as `core/proxy.clj`, `core/print.clj`, `genclass.clj`, and `clojure/java/io.clj`. Except for the last, these all define functions within `clojure.core`. I'm not sure why these are separated from the main file except perhaps for organizational purposes, but over half of our load time comes from these methods.
+I have marked the individual times only for desktop profiling as Android profiling data was difficult to parse. These lines load a number of functions that are defined in other classes. Functions from `core_proxy.clj`, `core_print.clj`, `genclass.clj`, `core_deftype.clj`, and `gvec.clj` are defined in the `clojure.core` namespace. Functions from the other files are defined in their own namespaces. I'm not sure why these are separated from the main file except perhaps for organizational purposes, but over half of our load time comes from these methods.
 
 ### What can we do about this?
 
@@ -362,5 +362,9 @@ I would love to hear any ideas or feedback.
 
 * [Desktop profiling setup](https://github.com/nicholaskariniemi/thesis/tree/master/experiments/clojure_profiling)
 * [Android profiling setup](https://github.com/nicholaskariniemi/thesis/tree/master/experiments/clojure_android_profiling)
+
+-----
+
+Edit 2014-2-26: Corrected which external functions are defined in clojure.core.
 
 -----
