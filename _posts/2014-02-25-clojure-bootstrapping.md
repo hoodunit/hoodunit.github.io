@@ -332,7 +332,7 @@ I have marked the individual times only for desktop profiling as Android profili
 
 ### What can we do about this?
 
-Martin Trojer [discusses this same issue](http://martinsprogrammingblog.blogspot.fi/2012/02/why-is-clojure-so-slow.html) based on Daniel Solano Gómez's [presentation](https://github.com/relevance/clojure-conj/blob/master/2011-slides/daniel-solano-gómez-clojure-and-android.pdf) from Clojure/conj 2011. Gómez's presentation presents the problems of Clojure on Android quite clearly. He has also for several years proposed a ["Lean JVM Runtime"](http://dev.clojure.org/display/community/Project+Ideas#ProjectIdeas-LeanJVMRuntime) Google Summer of Code project targetting this problem. The ideas presented here are mostly not my own.
+Martin Trojer [discusses this same issue](http://martinsprogrammingblog.blogspot.fi/2012/02/why-is-clojure-so-slow.html) based on Daniel Solano Gómez's [presentation](https://github.com/relevance/clojure-conj/blob/master/2011-slides/daniel-solano-gómez-clojure-and-android.pdf) from Clojure/conj 2011. Solano's presentation presents the problems of Clojure on Android quite clearly. He has also for several years proposed a ["Lean JVM Runtime"](http://dev.clojure.org/display/community/Project+Ideas#ProjectIdeas-LeanJVMRuntime) Google Summer of Code project targetting this problem. The ideas presented here are mostly not my own.
 
 Based on this simple, fairly informal look at Clojure startup time the primary problem is that many classes are loaded that are not used. This is probably to support the dynamic capabilities of Clojure, as functions like `eval` cannot know what classes are needed (see e.g. [this post](http://blog.fogus.me/2011/07/29/compiling-clojure-to-javascript-pt-2-why-no-eval/)).
 
@@ -342,7 +342,7 @@ Doing less means not loading classes that aren't needed or not loading them unti
 
 Doing it more quickly means making `clojure.core` load quickly. Removing metadata could give us some small gains. Vars could possibly be [replaced with a lighter-weight construct](http://dev.clojure.org/pages/viewpage.action?pageId=950293). The `clojure.core` namespace could maybe be serialized in some fashion so that loading it takes much less time.
 
-What's my stake in this? I am interested in finding ways to make Clojure work better for Android development as a master's thesis project at Aalto University. I have been communicating with Gómez about some of this and trying to fully understand the problem. I will also be trying to come up with a better set of benchmarks by which to measure improvements to this problem. I hope we can make Clojure a viable solution for Android development.
+What's my stake in this? I am interested in finding ways to make Clojure work better for Android development as a master's thesis project at Aalto University. I have been communicating with Daniel Solano Gómez about some of this and trying to fully understand the problem. I will also be trying to come up with a better set of benchmarks by which to measure improvements to this problem. I hope we can make Clojure a viable solution for Android development.
 
 A few questions related to this that I am thinking about:
 
@@ -366,5 +366,6 @@ I would love to hear any ideas or feedback.
 -----
 
 Edit 2014-2-26: Corrected which external functions are defined in clojure.core.
+Edit 2014-3-02: Corrected Daniel Solano Gómez's name.
 
 -----
