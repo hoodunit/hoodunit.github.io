@@ -360,8 +360,8 @@ I would love to hear any ideas or feedback.
 <a name="footnotes"></a>
 ### Footnotes
 
-* [Desktop profiling setup](https://github.com/nicholaskariniemi/thesis/tree/master/experiments/clojure_jvm/profiling)
-* [Android profiling setup](https://github.com/nicholaskariniemi/thesis/tree/master/experiments/clojure_dalvik/profiling)
+* [Desktop profiling setup](https://github.com/nicholaskariniemi/thesis_experiments/tree/master/clojure_jvm/profiling)
+* [Android profiling setup](https://github.com/nicholaskariniemi/thesis_experiments/tree/master/clojure_dalvik/profiling)
 
 -----
 
