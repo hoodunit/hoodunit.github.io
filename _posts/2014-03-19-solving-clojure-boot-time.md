@@ -138,7 +138,7 @@ The second important feature is **dynamic incremental compilation and evaluation
 
 In development, both of these features are very useful. Dynamic binding allows you to redefine functions for testing and development and gives more tools to work with external libraries that you do not control. Runtime evaluation and compilation combined with dynamic binding enable the short feedback loops of a powerful REPL development environment.
 
-But how important are these features at run time? Dynamic compilation seems to be used hardly at all at run time. Use of dynamic binding in production is usually discouraged. In the case of Android development, dynamic recompilation is not even possible in the same way. When using a Clojure library from a Java environment it seems unlikely these features would be useful. In both of these last cases fast startup time and runtime performance seem more important.
+But how important are these features in production? Dynamic compilation seems to be used hardly at all in production. Use of dynamic binding in production is usually discouraged. In the case of Android development, dynamic recompilation is not even possible in the same way. When using a Clojure library from a Java environment it seems unlikely these features would be useful. In both of these last cases fast startup time and runtime performance seem more important.
 
 ### The Idea
 
