@@ -32,7 +32,7 @@ Most of the work of bootstrapping Clojure programs relates to setting up dynamic
 But what if we decide that we don't need runtime evaluation or compilation, at least for production? Then there's no sense in keeping around all of these extra functions that are never used. This idea is to generate a specific stripped production runtime for the application being developed. Instead of including the normal Clojure runtime/compiler with your app, the app would use this new stripped runtime. The runtime would differ from the normal runtime in the following ways:
 
 * All core functions that are not used are stripped out from the Clojure runtime and therefore not loaded in core initialization.
-* Runtime compilation and interpretation functions are removed.
+* Runtime compilation and evaluation functions are removed.
 * Unused metadata is also removed.
 
 This is a fairly easy idea to test. Take a few Clojure programs, see what `clojure.core` functions they rely on, strip the remaining functions from `clojure.core` source, recompile the Clojure runtime, and run the program using the new runtime.
@@ -134,11 +134,11 @@ Clojure is a dynamic language. Two key features that Clojure supports as a dynam
 
 **Dynamic binding** is in some ways a surprising feature for a language that touts its immutability. All variables defined with `def` and functions defined with `defn` are implemented using mutable Vars. The Vars are stored within mutable Namespaces. Either can be changed at any time. This means that every function call requires at least two levels of indirection: first get the Namespace, then the Var, then the function itself, and finally call the function. Refer to the <a href="#dynamicBinding">diagram</a> further up.
 
-The second important feature is **dynamic incremental compilation and evaluation**. Clojure is a very flexible language. Almost anything that can be done at compile time can also be done at run time. It includes both a built in interpreter<a href="#refInterpretation"><sup>[1]</sup></a> and compiler. Among other things, this enables the power of the Read Eval Print Loop (REPL). Combined with dynamic binding of namespaces and namespace variables, this gives a programmer a substantial amount of power to change their program while it is running.
+The second important feature is **dynamic incremental compilation and evaluation**. Clojure is a very flexible language. Almost anything that can be done at compile time can also be done at run time. It includes built in evaluation <a href="#refInterpretation"><sup>[1]</sup></a> and compilation. Among other things, this enables the power of the Read Eval Print Loop (REPL). Combined with dynamic binding of namespaces and namespace variables, this gives a programmer a substantial amount of power to change their program while it is running.
 
 In development, both of these features are very useful. Dynamic binding allows you to redefine functions for testing and development and gives more tools to work with external libraries that you do not control. Runtime evaluation and compilation combined with dynamic binding enable the short feedback loops of a powerful REPL development environment.
 
-But how important are these features at run time? Dynamic interpretation and compilation seem to be used hardly at all at run time. Use of dynamic binding in production is usually discouraged. In the case of Android development, dynamic recompilation is not even possible in the same way. When using a Clojure library from a Java environment it seems unlikely these features would be useful. In both of these last cases fast startup time and runtime performance seem more important.
+But how important are these features at run time? Dynamic compilation seems to be used hardly at all at run time. Use of dynamic binding in production is usually discouraged. In the case of Android development, dynamic recompilation is not even possible in the same way. When using a Clojure library from a Java environment it seems unlikely these features would be useful. In both of these last cases fast startup time and runtime performance seem more important.
 
 ### The Idea
 
@@ -151,7 +151,7 @@ The premises of a lean JVM runtime are the following:
 Based on these premises, the following changes would be made to the Clojure compiler and runtime:
 
 * Dynamic binding is removed. Namespaces compile to classes. Namespace variables and functions compile to static fields or methods. The Var is probably removed entirely.
-* Dynamic compilation and interpretation are removed. Functions that rely on runtime compilation and interpretation such as `eval`, `compile`, `load`, and so forth are eliminated.
+* Dynamic compilation and evaluation are removed. Functions that rely on runtime compilation and evaluation such as `eval`, `compile`, `load`, and so forth are eliminated.
 
 ### How will this improve Clojure startup times?
 
@@ -192,7 +192,15 @@ There are lots of unanswered questions here. The implementation details of the l
 
 ---
 <small>
-<a name="refInterpretation">[1]</a> Clojure is cited as a purely compiled language in a number of places. But then why does [this](https://github.com/clojure/clojure/blob/master/src/jvm/clojure/lang/Compiler.java#L7098) look so much like interpretation? Is Java bytecode involved in some way that I can't see right now?
+<a name="refInterpretation">[1]</a> Clojure is cited as a purely compiled language in a number of places. But then why does [this](https://github.com/clojure/clojure/blob/master/src/jvm/clojure/lang/Compiler.java#L7098) look so much like interpretation? Is Java bytecode involved in some way that I can't see right now? **Update:** as per Alex Miller's comment, yes, it is actually compiled.
+</small>
+
+---
+
+<small>
+
+* Edit 2014-03-19: removed all references to interpretation as per Alex Miller's correction.
+
 </small>
 
 [reduceClojure]: http://gal.dolber.com/post/78110050703/reduce-startup
