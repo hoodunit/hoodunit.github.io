@@ -1,3 +1,3 @@
 # Blog
 
-This is the source code for my [blog](http://nicholaskariniemi.github.io).
+This is the source code for my [blog](http://blog.ndk.io).
