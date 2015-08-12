@@ -92,4 +92,4 @@ But Android is still waiting for it's Swift.
 
 ## More details
 
-The rather verbose version of this post is in my <a href="http://thesis.ndk.io">thesis</a>.
+The rather verbose version of this post is in my <a href="https://ndk.io/clojure_on_android.pdf">thesis</a>.
