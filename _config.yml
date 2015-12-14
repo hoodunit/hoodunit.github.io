@@ -1,4 +1,4 @@
 name: Nicholas Kariniemi
 markdown: redcarpet
-pygments: true
+highlighter: pygments
 url: https://nicholaskariniemi.github.io
