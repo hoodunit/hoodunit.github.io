@@ -8,18 +8,20 @@ layout: default
 {{ content }}
 </div>
 
+<div class="prev-next-footer">
 {% for post in site.posts %}
 		{% assign prev = site.posts[forloop.index] %}
 		{% if post.title == page.title %}
 		{% if prev %}
-		<div class="pull-left"><a href="{{ site.url }}{{ prev.url }}">&larr; {{ prev.title }}</a></div>
+		<div class="prev-post"><a href="{{ site.url }}{{ prev.url }}">&larr; {{ prev.title }}</a></div>
 	  {% endif %}
 		{% if next %}
-		<div class="pull-right"><a href="{{ site.url }}{{ next.url }}">{{ next.title }} &rarr;</a></div>
+		<div class="next-post"><a href="{{ site.url }}{{ next.url }}">{{ next.title }} &rarr;</a></div>
 	  {% endif %}
 	  {% endif %}
 	  {% assign next = post %}
 {% endfor %}
+</div>
 
 <div class="clearfix"></div>
 

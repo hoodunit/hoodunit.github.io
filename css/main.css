@@ -184,3 +184,23 @@ code {
   text-align: center;
   font-size: 20px;
 }
+
+.prev-next-footer {
+  width: 100%;
+  margin: 10px ;
+}
+
+.prev-post {
+  display: inline-block;
+  margin: 10px 0;
+}
+
+.next-post {
+  display: inline-block;
+  float: right;
+  margin: 10px 0;
+}
+
+.clearfix {
+  clear: both;
+}
