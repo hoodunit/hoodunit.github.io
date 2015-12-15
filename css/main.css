@@ -16,12 +16,13 @@ html, body {
 
 body {
   background-color: #FFF;
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-family: "Raleway","Open Sans","Helvetica Neue",sans-serif;
   font-size: 18px;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: normal;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.8);
 }
 
 p {
@@ -82,8 +83,7 @@ code {
 }
 
 .site {
-  padding-bottom: 0.5em;
-  line-height: 1.5em;
+  line-height: 32px;
 }
 
 .header {
@@ -98,18 +98,19 @@ code {
 }
 
 .site-title {
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .site-title a {
-  color: #a00;
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .site-title a:hover {
-  color: #000;
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .site-title a:visited {
-  color: #000;
+  color: rgba(0, 0, 0, 0.8);
 }
 
 .icon-links {
@@ -160,8 +161,17 @@ code {
 }
 
 .title {
-  -top: 0.5em;
-  margin-bottom: 0.5em;
+  margin-bottom: 2px;
+  font-weight: bold;
+  font-size: 27px;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.subtitle {
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.5);
 }
 
 /*****************************************************************************/

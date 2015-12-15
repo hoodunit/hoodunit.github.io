@@ -54,14 +54,14 @@ Hello world
 
 1.21 seconds! That's **30** times as long! To put it into perspective:
 
-<img class="blog-img" style="min-width: 300px; width: 100%; max-width: 500px;" src="/img/jvm_vs_clojure.svg"></img>
+<img class="blog-img" style="min-width: 300px; width: 100%; max-width: 500px;" src="/img/jvm_vs_clojure.svg" />
 <div class="blog-img-label">JVM Versus Clojure</div>
 
 Let's note a few things here. I was using the SAME Java installation, so there shouldn't be any differences due to persistent VMs or client VMs. The code was AOT-compiled.
 
 The situation is worse on Android. The scale of the problem is roughly the same, but since Android apps already start much more slowly the problem is exacerbated.
 
-<img class="blog-img" style="min-width: 300px; width: 100%; max-width: 500px;" src="/img/dalvik_vs_clojure.svg"></img>
+<img class="blog-img" style="min-width: 300px; width: 100%; max-width: 500px;" src="/img/dalvik_vs_clojure.svg" />
 <div class="blog-img-label">Dalvik Versus Clojure</div>
 
 This compares a Java Hello World app from the Android tutorials and a Clojure version using a release compilation of lein-droid on my Nexus 4. The point is not to get exact measurements, but to show the scale of the problem.

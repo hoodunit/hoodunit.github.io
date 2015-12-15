@@ -2,7 +2,8 @@
 layout: default
 ---
 <div class="date">{{ page.date | date_to_string }}</div>
-<h2 class="title">{{ page.title }}</h2>
+<div class="title">{{ page.title }}</div>
+{% if page.subtitle %} <div class="subtitle">{{ page.subtitle }}</div> {% endif %}
 
 <div class="post">
 {{ content }}

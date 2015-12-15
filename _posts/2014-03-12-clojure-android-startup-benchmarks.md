@@ -5,7 +5,7 @@ layout: post
 
 How slowly do Clojure on Android apps start? Here are a few benchmarks.
 
-<img class="blog-img" src="/img/clojure_android_startup_benchmarks.png"></img>
+<img class="blog-img" src="/img/clojure_android_startup_benchmarks.png" />
 
 The Java app is a simple Hello World application written in Java that displays the text "Hello World". The minimal app is an equivalent written entirely in Clojure. The lein-droid app is essentially the [lein-droid](https://github.com/clojure-android/lein-droid) default template app. Lein-droid provides a number of nice tools for developing Clojure on Android apps.
 

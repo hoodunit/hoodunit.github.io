@@ -7,9 +7,9 @@ Clojure programs start slowly because they load the `clojure.core` namespace bef
 
 This is slow. Simple desktop Clojure programs start about 35x more slowly than their Java counterparts. Clojure Android apps start as little as 6x more slowly than their Java counterparts, but the base start time is much higher so the problem is worse.
 
-<img class="blog-img" style="min-width: 200px; width: 100%; max-width: 434px;" src="/img/clojure_vs_java_speed.svg"></img>
+<img class="blog-img" style="min-width: 200px; width: 100%; max-width: 434px;" src="/img/clojure_vs_java_speed.svg" />
 
-<img class="blog-img" style="min-width: 500px; width: 100%; max-width: 720px;" src="/img/hello_world_all_nocore.png"></img>
+<img class="blog-img" style="min-width: 500px; width: 100%; max-width: 720px;" src="/img/hello_world_all_nocore.png" />
 
 In the very best case a Clojure on Android app currently starts in about 1.7 seconds. More normal cases likely take at least 3-5 seconds. Jakob Nielsen in his book [Usability Engineering][usabilityEngineering] suggests [a few rules of thumb][responseTime] for UI response time. A user perceives as much as 0.1 seconds as instantaneous. Delays of more than 0.2 seconds are noticeable and delays of more than one second should have some indication to the user that something is happening. Ten seconds or more and you will lose your user's attention completely.
 
@@ -67,7 +67,7 @@ The Clojure core namespace does provide a lot of functionality: bitwise operatio
 
 But here's the challenge. Here's my chart of the function interdependencies in `clojure.core`:
 
-<img class="blog-img" style="min-width: 300px; width: 100%; max-width: 549px;" src="/img/clojure_core_deps.png"></img>
+<img class="blog-img" style="min-width: 300px; width: 100%; max-width: 549px;" src="/img/clojure_core_deps.png" />
 
 Each of those nodes is a function in `clojure.core`. The lines indicate which other functions in `clojure.core` the function relies on.
 
@@ -93,7 +93,7 @@ const__cons.bindRoot(new core.cons());
 
 The end result looks kind of like this:
 
-<a name="dynamicBinding"><img class="blog-img" style="min-width: 300px; width: 100%; max-width: 500px;" src="/img/Var.svg"></img></a>
+<a name="dynamicBinding"><img class="blog-img" style="min-width: 300px; width: 100%; max-width: 500px;" src="/img/Var.svg" /></a>
 
 The Namespace object for `clojure.core` is set up with a mapping of Symbols to Vars corresponding to functions. Each Var in turn points to its own metadata and an instance of the Java class file which implements the Var functionality.
 
@@ -108,7 +108,7 @@ This first fetches the `core` namespace and then fetches the Var in the namespac
 
 But why do we need to set up everything beforehand when a namespace is loaded? Why can't we just load and set up functions as we need them? galdolber's [idea][reduceClojure] would move the Vars into their corresponding class instances and initialize them only when they are first used. This also sounds fairly similar to [Laurent petit's comment][laurentPetitComment] on my other post. I picture the result something like this:
 
-<img class="blog-img" style="min-width: 300px; width: 100%; max-width: 500px;" src="/img/Var in class.svg"></img>
+<img class="blog-img" style="min-width: 300px; width: 100%; max-width: 500px;" src="/img/Var in class.svg" />
 
 We keep Clojure's dynamic binding features, as we still use mutable Namespaces and Vars, while pushing the time to load and initialize functions to the first time they are used.
 

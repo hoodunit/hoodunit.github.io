@@ -7,12 +7,12 @@ How does Clojure compilation work? What black magic is needed to transform elega
 
 Let's start with a simple question. Is Clojure compiled or interpreted? Someone asked this same question [on Stack Overflow](http://stackoverflow.com/questions/5669933/is-clojure-compiled-or-interpreted). The answer? It's complicated. Clojure code can be either dynamically loaded or AOT (ahead of time) compiled to Java bytecode. For loading Clojure code dynamically, the process looks like this:
 
-<img class="blog-img" style="min-width: 300px; width: 100%; max-width: 600px;" src="/img/dynamic_compilation.svg"></img>
+<img class="blog-img" style="min-width: 300px; width: 100%; max-width: 600px;" src="/img/dynamic_compilation.svg" />
 <div class="blog-img-label">Clojure Dynamic Compilation</div>
 
 For AOT compilation on the JVM, it looks more like this:
 
-<img class="blog-img" style="min-width: 300px; width: 100%; max-width: 600px;" src="/img/AOT_compilation.svg"></img>
+<img class="blog-img" style="min-width: 300px; width: 100%; max-width: 600px;" src="/img/AOT_compilation.svg" />
 <div class="blog-img-label">Clojure AOT Compilation</div>
 
 So AOT compilation looks a lot like normal compilation: the code is compiled and then the compiled code is executed. For dynamic compilation the picture is a little hazier. It turns out it also uses an intermediate bytecode representation, but this is generated and used at run time without being saved to a file.
@@ -23,7 +23,7 @@ In many respects the process seems to be the same, but let's ignore dynamic comp
 
 The Java Virtual Machine does not understand Java but only Java bytecode. What is Java bytecode? Java bytecode is a collection of class files. Each class file contains a description of a class and the methods defined in the class, which have been translated to Java bytecode instructions. It looks like this:
 
-<img class="blog-img" style="width: 250px" src="/img/class_file.svg"></img>
+<img class="blog-img" style="width: 250px" src="/img/class_file.svg" />
 <div class="blog-img-label">Java Class File</div>
 
 Magic is the hexadecimal string "0xCAFEBABE", which just provides an easy way to see that the file is a Java class file. The next items tell the Java class file version, such as J2SE 7. The constant pool is a data structure containing references to classes, interfaces, and other constants used in the class. Following the constant pool is information about the class such as whether it is a class or an interface, whether it is public or private, its name, and the name of classes or interfaces it extends or implements. Following this are the fields (class or instance variables), methods, and attributes of the class. The code for methods is represented with Java bytecode instructions.
@@ -32,7 +32,7 @@ The gory details are described in the [JVM specification](http://docs.oracle.com
 
 So how does the JVM load and execute this code? The JVM *loads*, *links*, and *initializes* class files. Note that the class file information does not have to be stored in a file, but can also be downloaded over the network or generated on the fly. The last point is important for dynamic Clojure compilation.
 
-<img class="blog-img" src="/img/loading_linking_init.gif"></img>
+<img class="blog-img" src="/img/loading_linking_init.gif" />
 <div class="blog-img-label">Class Loading Process</div>
 
 <center>Source: [Inside the Java Virtual Machine](http://www.artima.com/insidejvm/ed2/lifetypeP.html)</center>
@@ -110,7 +110,7 @@ const #28 = Asciz	(Ljava/lang/String;)V;
 
 Or fitting this back to our diagram:
 
-<img class="blog-img" style="width: 250px" src="/img/java_helloworld.svg"></img>
+<img class="blog-img" style="width: 250px" src="/img/java_helloworld.svg" />
 <div class="blog-img-label">Java Hello World Class File</div>
 
 In this example our main method was compiled to the bytecode equivalent of the following:

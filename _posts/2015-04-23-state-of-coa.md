@@ -7,7 +7,7 @@ layout: post
 
 Clojure on Android suffers from the slow startup times of the Clojure runtime. The Lean Clojure compiler projects promise fast startup times and performance at the cost of dynamism and complexity. Does it work?
 
-<img class="blog-img" style="min-width: 300px; width: 100%; max-width: 600px;" src="/img/clojure_plus_android_dark.png"></img>
+<img class="blog-img" style="min-width: 300px; width: 100%; max-width: 600px;" src="/img/clojure_plus_android_dark.png" />
 
 How do you know if anything works? You test it. You set up some experiment that you think models the problem. You make your change, run the experiment with and without the change, and see what happens. You draw conclusions and quibble about whether you tested what you thought you tested and whether the results mean anything.
 
@@ -21,7 +21,7 @@ The Skummet compiler works something like the following.
 
 Clojure namespaces set up a dynamic mapping between symbols, vars, and functions. This mapping looks basically like this:
 
-<img class="blog-img" style="min-width: 300px; width: 100%; max-width: 600px;" src="/img/namespace_vars.svg"></img>
+<img class="blog-img" style="min-width: 300px; width: 100%; max-width: 600px;" src="/img/namespace_vars.svg" />
 
 At run time Clojure calls functions like this, in decompiled JVM bytecode:
 
@@ -31,7 +31,7 @@ RT.var("clojure.core", "cons").getRawRoot().invoke(args);
 
 Skummet changes this by dropping out the middle men, the symbols and vars, to get something like this:
 
-<img class="blog-img" style="min-width: 300px; width: 100%; max-width: 600px;" src="/img/namespace_vars_lean.svg"></img>
+<img class="blog-img" style="min-width: 300px; width: 100%; max-width: 600px;" src="/img/namespace_vars_lean.svg" />
 
 Invoking functions gets a lot simpler:
 
@@ -51,14 +51,14 @@ That's the theory. But does it work?
 
 I took five benchmarks from the Computer Language Benchmarks Game,  two little benchmarks of my own, and ran the benchmarks on the Nexus 5 and Nexus 7 on both Dalvik and ART. Here are the results:
 
-<img class="blog-img" style="min-width: 300px; width: 100%; max-width: 800px;" src="/img/benchmarks1.png"></img>
-<img class="blog-img" style="min-width: 300px; width: 100%; max-width: 800px;" src="/img/benchmarks2.png"></img>
-<img class="blog-img" style="min-width: 300px; width: 100%; max-width: 800px;" src="/img/benchmarks3.png"></img>
-<img class="blog-img" style="min-width: 300px; width: 100%; max-width: 800px;" src="/img/benchmarks4.png"></img>
+<img class="blog-img" style="min-width: 300px; width: 100%; max-width: 800px;" src="/img/benchmarks1.png" />
+<img class="blog-img" style="min-width: 300px; width: 100%; max-width: 800px;" src="/img/benchmarks2.png" />
+<img class="blog-img" style="min-width: 300px; width: 100%; max-width: 800px;" src="/img/benchmarks3.png" />
+<img class="blog-img" style="min-width: 300px; width: 100%; max-width: 800px;" src="/img/benchmarks4.png" />
 
 The same benchmarks presented with only startup times by test environment:
 
-<img class="blog-img" style="min-width: 300px; width: 100%; max-width: 800px;" src="/img/benchmark_startup_times.png"></img>
+<img class="blog-img" style="min-width: 300px; width: 100%; max-width: 800px;" src="/img/benchmark_startup_times.png" />
 
 Each benchmark opens an Android activity and performs some task. The *hello* benchmark just prints "Hello world". The *dependencies* benchmark does something trivial with two library dependencies, <a href="https://github.com/ReactiveX/RxClojure">RxClojure</a> (or <a href="https://github.com/ReactiveX/RxJava">RxJava</a>) and <a href="https://github.com/cognitect/transit-clj">Transit</a>. The others execute algorithms specified in the <a href="http://benchmarksgame.alioth.debian.org/">Computer Language Benchmarks Game</a>.
 

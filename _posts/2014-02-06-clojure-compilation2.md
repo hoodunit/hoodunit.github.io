@@ -1,9 +1,8 @@
 ---
 title: "Clojure Compilation: Full Disclojure"
+subtitle: "Or What Does It Mean to Be Dynamic (and What Are the Costs)?"
 layout: post
 ---
-
-#### Or What Does It Mean to Be Dynamic (and What Are the Costs)?
 
 The previous post looked at how a Hello World Clojure app is compiled. We saw how a Java source file compiles to a single Java class file while a comparable Clojure source file compiles to four class files. This is a lie.
 
@@ -37,7 +36,7 @@ This is getting to be a long list but for the most part it should be a complete 
 
 Now let's open up that JAR. How many files do we find? 3122.
 
-<img class="blog-img" style="min-width: 300px; width: 100%; max-width: 400px;" src="/img/complete_hello_world.svg"></img>
+<img class="blog-img" style="min-width: 300px; width: 100%; max-width: 400px;" src="/img/complete_hello_world.svg" />
 <div class="blog-img-label">Complete Hello World</div>
 
 META-INF has some files for the JAR format that we won't get in to. Both the hello directory and the clojure directory contain Clojure source code, which doesn't affect execution. Delete it and run the JAR if you don't believe me. The hello directory contains one extra file named `core.class` as expected. That all seems good and normal.

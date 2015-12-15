@@ -7,7 +7,7 @@ In my tests Clojure programs take 35x and 6x as long to boot on the desktop and 
 
 Here is the execution time for basic Hello World programs in Java and Clojure on the desktop and Android:
 
-<img class="blog-img" src="/img/hello_world_all.png"></img>
+<img class="blog-img" src="/img/hello_world_all.png" />
 
 So the short answer is this: Clojure programs start slowly because every Clojure program loads the main Clojure namespace `clojure.core` before executing. This takes time.
 
@@ -21,8 +21,8 @@ About 80% of the load time of my profiled Hello World apps on both the JVM and D
 
 Here's one way of looking at how `core__init.class` load time breaks down: 
 
-<img class="blog-img" style="display: inline-block;" src="/img/desktop_core_time.png"></img>
-<img class="blog-img" style="display: inline-block;" src="/img/android_core_time.png"></img>
+<img class="blog-img" style="display: inline-block;" src="/img/desktop_core_time.png" />
+<img class="blog-img" style="display: inline-block;" src="/img/android_core_time.png" />
 
 A good portion of the time goes into creating and assigning vars and metadata for clojure.core functions. The desktop program takes a significantly longer time assigning vars and metadata than the Android program. Over half of the total time goes into what I have described as loading "external functions". Let's look at what exactly is happening in each of those to get an understanding of where time goes and what happens when `clojure.core` is loaded. 
 
