@@ -24,13 +24,23 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
 
-p { margin: 1em 0; }
+p {
+  margin: 1em 0;
+}
 
 a {
   color: #268bd2;
-}
-a:hover {
   text-decoration: none;
+}
+
+a:hover {
+  color: #12496F;
+  text-decoration: none;
+}
+
+code {
+  font-size: 14px;
+  line-height: 14px;
 }
 
 /*****************************************************************************/
@@ -40,22 +50,23 @@ a:hover {
 /*****************************************************************************/
 .posts {
   list-style-type: none;
-  margin-bottom: 2em;
-  font-size: 120%;
+  margin-bottom: 20px;
 }
 
-.posts li {
-  line-height: 1.75em;
+.posts post-item {
+  min-width: 50px;
 }
 
 .posts .post-date {
   color: #666;
-  display: inline-block;
+  margin: 0 5px 0 0;
+  padding: 0 5px 0 0;
+  white-space: nowrap;
+  vertical-align: top;
 }
 
 .posts .post-title {
-  display: inline-block;
-  text-decoration: none;
+  padding: 0 0 0 5px;
 }
 
 /*****************************************************************************/
@@ -65,20 +76,19 @@ a:hover {
 /*****************************************************************************/
 
 .site-container {
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   max-width: 750px;
+  padding: 20px;
 }
 
 .site {
-  text-align: justify;
   padding-bottom: 0.5em;
   line-height: 1.5em;
 }
 
 .header {
-  padding-bottom: 0.75em;
-  margin-bottom: 0.5em;
+  padding: 0 0 18px 0;
+  margin: 0 0 10px 0;
   border-bottom: 1px solid #E2E2E2;
   position: relative;
 }
@@ -115,6 +125,7 @@ a:hover {
 
 .date {
   color: #aaa;
+  margin: 0 0 10px 0;
 }
 
 .footer {

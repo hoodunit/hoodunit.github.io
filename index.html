@@ -5,12 +5,14 @@ title: Nicholas Kariniemi Blog
 
 <div id="home">
   <h2 class="title">Blog Posts</h2>
-  <ul class="posts">
+  <table class="posts">
     {% for post in site.posts %}
-      <li>
-				<div class="post-date">{{ post.date | date_to_string }}</div>
-				<a class="post-title" href="{{ post.url }}">{{ post.title }}</a>
-			</li>
+      <tr class="post-item">
+				<td class="post-date">{{ post.date | date_to_string }}</td>
+				<td class="post-title">
+					<a href="{{ post.url }}">{{ post.title }}</a>
+				</td>
+			</tr>
     {% endfor %}
-  </ul>
+  </table>
 </div>
