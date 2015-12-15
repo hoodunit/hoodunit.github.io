@@ -1,6 +1,6 @@
 name: Nicholas Kariniemi
 markdown: kramdown
-highlighter: rouge
+highlighter: pygments
 url: https://nicholaskariniemi.github.io
 kramdown: 
   input: GFM
