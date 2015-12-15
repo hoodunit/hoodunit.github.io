@@ -2,3 +2,5 @@ name: Nicholas Kariniemi
 markdown: kramdown
 highlighter: rouge
 url: https://nicholaskariniemi.github.io
+kramdown: 
+  input: GFM
