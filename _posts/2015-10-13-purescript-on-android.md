@@ -7,7 +7,7 @@ I've been playing around with PureScript on Android via React Native.
 
 Here's what a TodoMVC-style app looks like:
 
-<img style="width: 300px;" src="/img/todomvc_screenshot.png"></img>
+<img style="width: 300px; margin: 0 auto; display: block;" src="/img/todomvc_screenshot.png" />
 
 And here's what the guts of the code look like:
 
