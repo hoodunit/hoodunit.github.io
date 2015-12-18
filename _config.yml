@@ -1,6 +1,6 @@
 name: Nicholas Kariniemi
-markdown: kramdown
+markdown: redcarpet
 highlighter: pygments
 url: https://nicholaskariniemi.github.io
-kramdown: 
-  input: GFM
+redcarpet:
+  extensions: [footnotes]
