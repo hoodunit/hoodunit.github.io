@@ -1,7 +1,7 @@
 name: Nicholas Kariniemi
 markdown: redcarpet
 highlighter: pygments
-url: https://nicholaskariniemi.github.io
+url: http://blog.ndk.io
 permalink: none
 redcarpet:
   extensions: [footnotes]

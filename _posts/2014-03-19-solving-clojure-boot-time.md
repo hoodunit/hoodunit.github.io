@@ -207,7 +207,7 @@ There are lots of unanswered questions here. The implementation details of the l
 [clojureScriptDifferences]: https://github.com/clojure/clojurescript/wiki/Differences-from-Clojure
 [usabilityEngineering]: http://www.nngroup.com/books/usability-engineering/
 [responseTime]: http://www.nngroup.com/articles/response-times-3-important-limits/
-[laurentPetitComment]: http://nicholaskariniemi.github.io/2014/02/25/clojure-bootstrapping.html
+[laurentPetitComment]: http://blog.ndk.io/clojure-bootstrapping.html
 [leanJVMRuntime]: http://dev.clojure.org/display/community/Project+Ideas#ProjectIdeas-LeanJVMRuntime
 [mikera]: https://twitter.com/mikera
-[clojureBootstrapping]: http://nicholaskariniemi.github.io/2014/02/25/clojure-bootstrapping.html
+[clojureBootstrapping]: http://blog.ndk.io/clojure-bootstrapping.html
