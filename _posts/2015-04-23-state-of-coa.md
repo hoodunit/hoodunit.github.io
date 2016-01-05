@@ -2,7 +2,7 @@
 title: "The state of Clojure on Android"
 subtitle: "Or: Does Lean Clojure work?"
 layout: post
-id: "/2015/04/23/state-of-coa"
+manual_id: "/2015/04/23/state-of-coa"
 ---
 
 Clojure on Android suffers from the slow startup times of the Clojure runtime. The Lean Clojure compiler projects promise fast startup times and performance at the cost of dynamism and complexity. Does it work?

@@ -1,6 +1,7 @@
 ---
 title: "Why is Clojure bootstrapping so slow?"
 layout: post
+manual_id: "/2014/02/25/clojure-bootstrapping"
 ---
 
 In my tests Clojure programs take 35x and 6x as long to boot on the desktop and Android when compared to their Java counterparts. Why? Where does all of the time go?

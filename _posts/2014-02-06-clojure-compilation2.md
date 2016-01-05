@@ -2,6 +2,7 @@
 title: "Clojure Compilation: Full Disclojure"
 subtitle: "Or What Does It Mean to Be Dynamic (and What Are the Costs)?"
 layout: post
+manual_id: "/clojure-compilation2"
 ---
 
 The previous post looked at how a Hello World Clojure app is compiled. We saw how a Java source file compiles to a single Java class file while a comparable Clojure source file compiles to four class files. This is a lie.

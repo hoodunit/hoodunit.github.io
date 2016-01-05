@@ -1,6 +1,7 @@
 ---
 title: Solving Clojure Boot Time
 layout: post
+manual_id: "/2014/03/19/solving-clojure-boot-time"
 ---
 
 Clojure programs start slowly because they load the `clojure.core` namespace before doing anything useful. Loading the `clojure.core` namespace loads the Java class files for all of the functions in `clojure.core` and sets up Vars to point to new class instances corresponding to each function.

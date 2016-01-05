@@ -1,6 +1,7 @@
 ---
 title: "The (Clojure) \"JVM Slow Startup Time\" Myth"
 layout: post
+manual_id: "/jvm-slow-startup"
 ---
 
 > By far the largest subset of performance-related complaints were about JVM startup time. Phil Hagelberg has also reported that this is one of, perhaps the highest, complaint of leiningen users as well. In particular, it seems from reading between the lines that at least some of these complaints are from users developing command line scripts or tools. JVM startup time is never going to go away (unless we ultimately have a natively compiled Clojure), but there are likely still things that can be done to decrease Clojure loading time or better control the loading of code.

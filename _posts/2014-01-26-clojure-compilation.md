@@ -1,6 +1,7 @@
 ---
 title: "Clojure Compilation: Parenthetical Prose to Bewildering Bytecode"
 layout: post
+manual_id: "/2014/01/26/clojure-compilation"
 ---
 
 How does Clojure compilation work? What black magic is needed to transform elegant parenthetical prose into binary instructions executed by a processor?

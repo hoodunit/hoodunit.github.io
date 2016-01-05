@@ -1,6 +1,7 @@
 ---
 title: "PureScript on Android"
 layout: post
+manual_id: "/2015/10/13/purescript-on-android"
 ---
 
 I've been playing around with PureScript on Android via React Native. 

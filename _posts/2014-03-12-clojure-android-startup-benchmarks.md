@@ -1,6 +1,7 @@
 ---
 title: Clojure on Android Startup Benchmarks (including ART)
 layout: post
+manual_id: "/clojure-android-startup-benchmarks"
 ---
 
 How slowly do Clojure on Android apps start? Here are a few benchmarks.
