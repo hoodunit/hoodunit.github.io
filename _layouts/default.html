@@ -1,15 +1,15 @@
 	<!DOCTYPE html>
 	<html>
 	    <head>
+		      {% include base.html %}
 	        <meta charset="utf-8">
 	        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	        <title>{{ page.title }}</title>
 	        <meta name="viewport" content="width=device-width">
-
 					<link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700" rel="stylesheet" type="text/css">
-	        <link rel="stylesheet" href="/css/normalize.css">
-	        <link rel="stylesheet" href="/css/code_highlight.css">
-	        <link rel="stylesheet" href="/css/main.css">
+	        <link rel="stylesheet" href="{{base}}/css/normalize.css">
+	        <link rel="stylesheet" href="{{base}}/css/code_highlight.css">
+	        <link rel="stylesheet" href="{{base}}/css/main.css">
           <link rel="alternate" type="application/rss+xml" 
 						title="{{ site.name }}" href="{{ site.url }}/feed.xml"	>
 					<!-- Piwik -->
@@ -27,19 +27,24 @@
 					</script>
 					<noscript><p><img src="https://analytics.ndk.io/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
 						<!-- End Piwik Code -->
+				{% if page.custom_css %}
+				  {% for stylesheet in page.custom_css %}
+				  <link rel="stylesheet" href="{{base}}/css/{{ stylesheet }}.css" media="screen" type="text/css">
+				  {% endfor %}
+				{% endif %}
 	    </head>
 	    <body>
 
 	        <div class="site-container container">
 	        <div class="site">
 	          <div class="header">
-	            <h3 class="site-title"><a href="/">{{ site.name }}</a></h3>
+	            <h3 class="site-title"><a href="{{base}}">{{ site.name }}</a></h3>
 							<div class="icon-links">
 								<a href="http://twitter.com/nkariniemi">
-									<img class="icon-link" alt="Twitter" src="/img/twitter.svg"></img>
+									<img class="icon-link" alt="Twitter" src="{{base}}/img/twitter.svg"></img>
 								</a>
 								<a href="http://github.com/nicholaskariniemi">
-									<img class="icon-link" alt="GitHub" src="/img/github.svg"></img>
+									<img class="icon-link" alt="GitHub" src="{{base}}/img/github.svg"></img>
 								</a>
 							</div>
 						</div>
@@ -49,7 +54,7 @@
 	          <div class="footer">
 							<div class="copyright"> Copyright ©	2015 Nicholas Kariniemi </div>
 						  <a href="http://blog.ndk.io/feed.xml">
-						  	<img class="rss" src="/img/feed-icon-14x14.png"></img>
+						  	<img class="rss" src="{{base}}/img/feed-icon-14x14.png"></img>
 						  </a>
 							<div>firstname dot lastname at gmail dot com</div>
 						</div>
