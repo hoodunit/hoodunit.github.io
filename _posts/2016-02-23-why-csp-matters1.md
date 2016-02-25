@@ -129,7 +129,7 @@ I wrote test cases to verify that different aspects of the synchronization algor
 
 And I remembered the promise of CSP.
 
-*Continued in part II (TBA)*
+*[Continued in part II][my_blog_post2]*
 
 *This post is duplicated on both [my blog][my_blog_post] and the [Reaktor blog][reaktor_blog_post].*
 
@@ -157,6 +157,7 @@ And I remembered the promise of CSP.
 [datomic]: http://www.datomic.com
 
 [my_blog_post]: http://blog.ndk.io/why-csp-matters1.html
+[my_blog_post2]: http://blog.ndk.io/why-csp-matters2.html
 [reaktor_blog_post]: http://reaktor.com/blog/why-csp-matters-i-keeping-things-in-sync
 
 ### Footnotes
