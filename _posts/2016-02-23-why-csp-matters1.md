@@ -131,7 +131,7 @@ And I remembered the promise of CSP.
 
 *[Continued in part II][my_blog_post2]*
 
-*This post is duplicated on both [my blog][my_blog_post] and the [Reaktor blog][reaktor_blog_post].*
+*This post is duplicated on both my blog and the [Reaktor blog][reaktor_blog_post].*
 
 [csppaper]: http://spinroot.com/courses/summer/Papers/hoare_1978.pdf
 [cspbook]: http://www.usingcsp.com/cspbook.pdf

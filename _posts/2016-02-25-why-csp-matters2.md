@@ -422,7 +422,7 @@ This is not a silver bullet. It's easy for models to grow large enough to make t
 *This* is why CSP matters.
 
 
-*This post is duplicated on both [my blog][my_blog_post] and the [Reaktor blog][reaktor_blog_post].*
+*This post is duplicated on both my blog and the [Reaktor blog][reaktor_blog_post].*
 
 ### Footnotes
 
@@ -453,5 +453,4 @@ This is not a silver bullet. It's easy for models to grow large enough to make t
 [source_server_sync]: https://github.com/nicholaskariniemi/grub/blob/b31489b2b88f4d9fdc3c245e1f4c1fcc32ab3880/src/clj/grub/server_sync.clj#L24
 [chp]: https://www.cs.kent.ac.uk/projects/ofa/chp/
 
-[my_blog_post]: http://blog.ndk.io/why-csp-matters2.html
 [reaktor_blog_post]: http://reaktor.com/blog/why-csp-matters-ii-how-do-i-know-sync-works
