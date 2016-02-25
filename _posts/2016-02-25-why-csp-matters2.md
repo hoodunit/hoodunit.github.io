@@ -10,7 +10,7 @@ One challenge is just to make the problem understandable. If the CSP language ca
 
 ## CSP and CSP<sub>M</sub>
 
-CSP has a long and rich history in research and their are doubtless countless uses and resources of which I haven't the foggiest. The books I found that I liked were Roscoe's ["The Theory and Practice of Concurrency"][roscoebook] and Steve Schneider's ["Concurrent and Real Time Systems: the CSP approach"][cspapproach], in addition to [The CSP Book][cspbook] from Hoare himself. But the important thing for me came from Roscoe's book, which introduced me to the CSP<sub>M</sub> language.
+CSP has a long and rich history in research and there are doubtless countless uses and resources of which I haven't the foggiest. The books I found that I liked were Roscoe's ["The Theory and Practice of Concurrency"][roscoebook] and Steve Schneider's ["Concurrent and Real Time Systems: the CSP approach"][cspapproach], in addition to [The CSP Book][cspbook] from Hoare himself. But the important thing for me came from Roscoe's book, which introduced me to the CSP<sub>M</sub> language.
 
 CSP is a mathematical language for representing processes that talk to each other. It allows you to model problems and then make assertions about those models. Modeling can be useful, as it helps you think about the problem, and assertions are grand. If you can make it work. Eventually. But to me this felt difficult to apply and not very well scalable to more complicated problems.
 
