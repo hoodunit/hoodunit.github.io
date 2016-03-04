@@ -426,7 +426,7 @@ This is not a silver bullet. It's easy for models to grow large enough to make t
 
 ### Footnotes
 
-[^1]: What we are actually specifying is much more precise than my hand-waving explanation. We are saying that our specification process *failures/divergences reduces* our implementation process. For further detail I direct you to the [Roscoe book][roscoebook], which provides precise mathematical definitions.
+[^1]: What we are actually specifying is much more precise than my hand-waving explanation. We are saying that our specification process *failures/divergences refines* our implementation process. For further detail I direct you to the [Roscoe book][roscoebook], which provides precise mathematical definitions.
 
 [csppaper]: http://spinroot.com/courses/summer/Papers/hoare_1978.pdf
 [cspbook]: http://www.usingcsp.com/cspbook.pdf
