@@ -445,12 +445,12 @@ This is not a silver bullet. It's easy for models to grow large enough to make t
 [eventsourcing]: http://martinfowler.com/eaaDev/EventSourcing.html
 [immutablejs]: https://facebook.github.io/immutable-js
 [mori]: http://swannodette.github.io/mori
-[grubsource]: https://github.com/nicholaskariniemi/grub
+[grubsource]: https://github.com/hoodunit/grub
 [grub]: https://grub.ndk.io
-[cspm_file]: https://github.com/nicholaskariniemi/grub/blob/master/spec/sync.csp
+[cspm_file]: https://github.com/hoodunit/grub/blob/master/spec/sync.csp
 [reportqueue]: http://docs.datomic.com/transactions.html#sec-5-3
-[source_client_sync]: https://github.com/nicholaskariniemi/grub/blob/b31489b2b88f4d9fdc3c245e1f4c1fcc32ab3880/src/cljc/grub/client_sync.cljc#L11
-[source_server_sync]: https://github.com/nicholaskariniemi/grub/blob/b31489b2b88f4d9fdc3c245e1f4c1fcc32ab3880/src/clj/grub/server_sync.clj#L24
+[source_client_sync]: https://github.com/hoodunit/grub/blob/b31489b2b88f4d9fdc3c245e1f4c1fcc32ab3880/src/cljc/grub/client_sync.cljc#L11
+[source_server_sync]: https://github.com/hoodunit/grub/blob/b31489b2b88f4d9fdc3c245e1f4c1fcc32ab3880/src/clj/grub/server_sync.clj#L24
 [chp]: https://www.cs.kent.ac.uk/projects/ofa/chp/
 
 [reaktor_blog_post]: http://reaktor.com/blog/why-csp-matters-ii-how-do-i-know-sync-works

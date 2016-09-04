@@ -150,9 +150,9 @@ And I remembered the promise of CSP.
 [eventsourcing]: http://martinfowler.com/eaaDev/EventSourcing.html
 [immutablejs]: https://facebook.github.io/immutable-js
 [mori]: http://swannodette.github.io/mori
-[grubsource]: https://github.com/nicholaskariniemi/grub
+[grubsource]: https://github.com/hoodunit/grub
 [grub]: https://grub.ndk.io
-[cspm_file]: https://github.com/nicholaskariniemi/grub/blob/master/spec/sync.csp
+[cspm_file]: https://github.com/hoodunit/grub/blob/master/spec/sync.csp
 [core_async_intro]: http://clojure.com/blog/2013/06/28/clojure-core-async-channels.html
 [datomic]: http://www.datomic.com
 

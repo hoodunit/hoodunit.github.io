@@ -52,6 +52,6 @@ main = do
                                                  filter: All }
 ```
 
-Check out the [example source code](https://github.com/nicholaskariniemi/purescript-react-native-todomvc) or the [React Native wrapper code](https://github.com/nicholaskariniemi/purescript-react-native). 
+Check out the [example source code](https://github.com/hoodunit/purescript-react-native-todomvc) or the [React Native wrapper code](https://github.com/hoodunit/purescript-react-native). 
 
 This wrapper code builds on Phil Freeman's [purescript-react](https://github.com/purescript-contrib/purescript-react) low-level wrapper for React, adding support for various elements used in Android. It is a work in progress. Functional afficionados will raise their eyebrows. Android gurus will throw their hands up in disgust. But it is PureScript. It is Android. And it is awesome.
