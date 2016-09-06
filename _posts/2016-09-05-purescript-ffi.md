@@ -307,7 +307,7 @@ This admittedly gets a bit ugly in some cases such as the above example, where i
 
 For example, a number of Screeps functions take in either x and y coordinates or a RoomPosition (containing x and y coordinates) or a RoomObject (which exists at a certain x and y position).
 
-PureScript doesn't have function overloading, but you can't handle it fairly neatly using ADTs as in the following:
+PureScript doesn't have function overloading, but you can handle it fairly neatly using ADTs as in the following:
 
 ```haskell
 data TargetPosition a =
