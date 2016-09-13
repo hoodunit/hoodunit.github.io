@@ -493,3 +493,7 @@ The Screeps PureScript library is [here][purescript_screeps]. Go forth and scree
 [ps_argonaut]: https://github.com/purescript-contrib/purescript-argonaut
 [purescript-lazy]: https://github.com/purescript/purescript-lazy
 [purescript-exceptions]: https://github.com/purescript/purescript-exceptions
+
+<small>
+Edit 2016-9-13: Added comments about purescript-exceptions and defining constants with `foreign import data`.
+<small>
