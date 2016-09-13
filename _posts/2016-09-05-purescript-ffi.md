@@ -110,6 +110,14 @@ exports.err_no_path = ERR_NO_PATH;
 
 For those unfamiliar with newtypes, it provides a type alias that at runtime works the same as the underlying type. In theory this gives us the benefits of both worlds: compile-time type safety and run-time performance. If we never expose the constructor for the newtype, the only way for a user to obtain values e.g. of type `ReturnCode` is through the ways we provide. This allows the use of only the constant values that we have defined.
 
+The type could also be defined with a `foreign import`:
+
+```haskell
+foreign import data ReturnCode :: *
+```
+
+This might be nicer for some cases, but makes it harder to write, say, type class implementations because you can't rely on generics.
+
 ### How do I wrap a class hierarchy?
 
 Screeps has a class hierarchy a few classes deep:
