@@ -303,6 +303,14 @@ exports.errorToEitherImpl = function(fun){
 
 This admittedly gets a bit ugly in some cases such as the above example, where it turns out the Screeps API will either throw an exception, or return a value which is sometimes null or undefined. But that's how the API is, and we keep our type guarantees.
 
+It turns out we can make this easier by using functions from [purescript-exceptions]. `try` takes an effectful function that throws an exception and turns it into a function that catches exceptions and returns either the exception or the value you wanted. As we've handled all of the side effects, we can make it a pure (non-effectful) function again with `runPure`.
+
+```haskell
+findClosestByPath :: forall a. RoomPosition -> FindContext a -> Either Error (Maybe a)
+findClosestByPath pos ctx = runPure (try closestByPath)
+  where closestByPath = toMaybe <$> runThisEffFn1 "findClosestByPath" pos (unwrapContext ctx)
+```
+
 ### How do I pass in arguments to overloaded functions?
 
 For example, a number of Screeps functions take in either x and y coordinates or a RoomPosition (containing x and y coordinates) or a RoomObject (which exists at a certain x and y position).
@@ -476,3 +484,4 @@ The Screeps PureScript library is [here][purescript_screeps]. Go forth and scree
 [purescript_functions]: https://github.com/purescript/purescript-functions
 [ps_argonaut]: https://github.com/purescript-contrib/purescript-argonaut
 [purescript-lazy]: https://github.com/purescript/purescript-lazy
+[purescript-exceptions]: https://github.com/purescript/purescript-exceptions
