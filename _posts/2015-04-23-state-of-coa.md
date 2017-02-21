@@ -5,6 +5,8 @@ layout: post
 manual_id: "/2015/04/23/state-of-coa"
 ---
 
+*Note that this post was written in April of 2015, based on experiments run on relatively current Android devices of the time. The situation may be different now.*
+
 Clojure on Android suffers from the slow startup times of the Clojure runtime. The Lean Clojure compiler projects promise fast startup times and performance at the cost of dynamism and complexity. Does it work?
 
 <img class="blog-img" style="min-width: 300px; width: 100%; max-width: 600px;" src="/img/clojure_plus_android_dark.png" />
