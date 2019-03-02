@@ -496,4 +496,4 @@ The Screeps PureScript library is [here][purescript_screeps]. Go forth and scree
 
 <small>
 Edit 2016-9-13: Added comments about purescript-exceptions and defining constants with `foreign import data`.
-<small>
+</small>
